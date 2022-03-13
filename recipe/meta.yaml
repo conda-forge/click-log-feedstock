@@ -1,5 +1,5 @@
 {% set name = "click-log" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 16fd1ca3fc6b16c98cea63acf1ab474ea8e676849dc669d86afafb0ed7003124
+  sha256: 3970f8570ac54491237bcdb3d8ab5e3eef6c057df29f8c3d1151a51a9c23b975
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
@@ -41,7 +41,7 @@ about:
   description: |
     Simple and beautiful logging for click applications
   doc_url: https://click-log.readthedocs.io
-  dev_url: https://github.com/click-contrib/click-log 
+  dev_url: https://github.com/click-contrib/click-log
 
 extra:
   recipe-maintainers:
